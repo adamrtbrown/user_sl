@@ -1,0 +1,19 @@
+{
+  "name": "node_user",
+  "version": "1.0.0",
+  "description": "Lambda test project",
+  "main": "api_server.mjs",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "do": "node --experimental-modules api_server.mjs"
+  },
+  "author": "Adam Brown",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "mysql": "^2.16.0"
+  }
+}

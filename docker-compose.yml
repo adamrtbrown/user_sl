@@ -1,0 +1,32 @@
+version: '3'
+services:
+  myadmin:
+      image: phpmyadmin/phpmyadmin
+      ports:
+          - "8081:80"
+      links:
+          - mysqldb
+      environment:
+          - PMA_ARBITRARY=1
+          - PMA_HOST=mysqldb
+          - PMA_PORT=3306
+      restart: always
+      depends_on:
+          - mysqldb
+  mysqldb:
+      image: mysql
+      restart: always
+      environment:
+          - MYSQL_DATABASE=user_db
+          - MYSQL_ROOT_PASSWORD=root
+          - MYSQL_USER=dev
+          - MYSQL_PASSWORD=dev
+      ports:
+          - "3307:3306"
+      volumes:
+          - "./data/mysql:/var/lib/mysql"
+  mailhog:
+      image: mailhog/mailhog
+      ports: 
+        - "8025:8025"
+      restart: always
