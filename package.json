@@ -13,7 +13,7 @@
   "author": "Adam Brown",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^5.0.0",
     "mysql": "^2.16.0"
   }
 }
